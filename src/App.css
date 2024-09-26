@@ -412,3 +412,22 @@ h1::before {
   }
 
 }
+
+.options{
+  cursor: pointer;
+  
+}
+
+.options:hover{
+  background-color: #dde0e0;
+}
+
+.options-click{
+  background-color: #26efef;
+  
+}
+
+.question{
+  font-size: larger;
+ 
+}

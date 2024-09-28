@@ -25,7 +25,7 @@ function questionData(){
             question: "What would your fighting style be?",
             options: [
                 { answer: "Using genius-level strategy", points: { Shikamaru: 15, Itachi: 5, Kakashi:5 }, optionValue: "A" },
-                { answer: "Pure physical power", points: { Rock_Lee: 10, Naruto: 5 }, optionValue: "B" },
+                { answer: "Pure physical power", points: { might_guy: 10, Naruto: 5 }, optionValue: "B" },
                 { answer: "Destructive eye powers", points: { Sasuke: 10, Itachi: 7, Madara:5 }, optionValue: "C" }
             ]
         },
@@ -59,8 +59,8 @@ function questionData(){
             question: "How do you handle emotions?",
             options: [
                 { answer: "Hide them and focus on revenge", points: { Sasuke: 10, Itachi: 5 }, optionValue: "A" },
-                { answer: "Cry openly but never give up", points: { Naruto: 10, Rock_Lee: 5 }, optionValue: "B" },
-                { answer: "Act cool, but get super awkward when it matters", points: { Rock_Lee: 10, Naruto: 5 }, optionValue: "C" },
+                { answer: "Cry openly but never give up", points: { Naruto: 10, might_guy: 5 }, optionValue: "B" },
+                { answer: "Act cool, but get super awkward when it matters", points: { might_guy: 10, Naruto: 5 }, optionValue: "C" },
                 { answer: "Suppress emotions masking pain under humor", points: { Kakashi: 10, Shikamaru: 5 }, optionValue: "D" },
             ]
         },
@@ -71,7 +71,7 @@ function questionData(){
                 { answer: "A giant toad summon", points: { Jiraiya: 10 }, optionValue: "B" },
                 { answer: "A fan larger than your body", points: { Madara: 10, Sasuke: 5 }, optionValue: "C" },
                 { answer: "A bunch of paper bombs", points: { Sakura: 10, Itachi: 5 , Shikamaru:5}, optionValue: "D" },
-                { answer: "My fists, no weapons needed!", points: { Rock_Lee: 10, Naruto: 5 }, optionValue: "E" }
+                { answer: "My fists, no weapons needed!", points: { might_guy: 10, Naruto: 5 }, optionValue: "E" }
                
             ]
         },
@@ -90,7 +90,7 @@ function questionData(){
             options: [
                 { answer: "Wild and spiky", points: { Naruto: 10, Jiraiya: 5, Kakashi:3 }, optionValue: "A" },
                 { answer: "Slicked back and serious", points: { Itachi: 10, Sasuke: 5 }, optionValue: "B" },
-                { answer: "Bowl-cut perfection", points: { Rock_Lee: 30 }, optionValue: "C" },
+                { answer: "Bowl-cut perfection", points: { might_guy: 30 }, optionValue: "C" },
                 { answer: "Cute Pink hairs", points: { Sakura: 30 }, optionValue: "D" }
             ]
         }
@@ -102,7 +102,19 @@ function questionData(){
 
 
 function characterImages(){
-    return ["imges"]
+    return [
+        {fName:"might_guy" ,imgUrl: "https://staticg.sportskeeda.com/editor/2022/05/6ba27-16536769676367.png"},
+        {fName: "kakashi", imgUrl: "https://c4.wallpaperflare.com/wallpaper/147/939/790/digital-art-anime-naruto-shippuuden-hatake-kakashi-wallpaper-preview.jpg"},
+        {fName: "naruto" , imgUrl: "https://cdn.wallpapersafari.com/14/45/JAbedK.jpg"},
+        {fName: "jiraiya" , imgUrl: "https://staticg.sportskeeda.com/editor/2022/06/2a6e5-16551161167924.png"},
+        {fName: "sasuke", imgUrl : "https://wallpapers.com/images/featured/cool-sasuke-scy1kmib74dvfreb.jpg"},
+        {fName: "itachi", imgUrl: "https://i.ytimg.com/vi/BC4h7nUSwDk/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGFogLCh_MA8=&rs=AOn4CLDg_vW6ElVgjgy_hKjyPVFzAFzDdQ"},
+        {fName: "shikamaru", imgUrl: "https://wallpapers.com/images/featured/shikamaru-zfpss89ed8cbf96n.jpg"},
+        {fName: "sakura", imgUrl:"https://wallpapers-clan.com/wp-content/uploads/2024/04/naruto-sakura-haruno-blossom-tree-desktop-wallpaper-cover.jpg"},
+        {fName :"hashirama", imgUrl:"https://wallpapers.com/images/hd/awesome-jutsu-hashirama-phone-9w49bdqjlr1fcg62.jpg"},
+        {fName: "orochimaru", imgUrl:"https://wallpapers.com/images/featured/orochimaru-kejgkby1aeabrl4z.jpg"},
+        {fName: "madara", imgUrl:"https://wallpapers.com/images/featured/madara-2zl7yw9a4mpm1yw4.jpg"}
+    ]
 }
 
 export {questionData, characterImages}

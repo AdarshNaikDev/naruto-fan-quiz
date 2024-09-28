@@ -11,7 +11,7 @@ function QuizParent() {
   const questionArray = questionData();
   const imagesArr = characterImages();
 
-  console.log(imagesArr)
+  //console.log(imagesArr)
 
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -22,19 +22,21 @@ function QuizParent() {
   );
   const [individualAns, setIndividualAns] = useState(null);
   const [answersArr, setAnsArr] = useState([]);
+  const[characterName, setCharacterName] = useState(null)
+  const [characterImg, setCharacterImg] = useState(null);
   function optionHandler(opValue, points) {
     setIndividualAns(points);
     setSelectedOption(opValue);
   }
 
-  const openModal = (e) => {
-    e.preventDefault();
+  const openModal = () => {
+    // e.preventDefault();
     setIsModalOpen(true);
   };
 
   // Function to close the modal
-  const closeModal = (e) => {
-    e.preventDefault();
+  const closeModal = () => {
+    // e.preventDefault();
     setIsModalOpen(false);
   };
 
@@ -76,8 +78,14 @@ function QuizParent() {
   }, [questionNo]);
 
   useEffect(() => {
-    if (answersArr.length === 10) {
+    if (answersArr.length >= 10) {
       let character = predictCharacter(answersArr);
+      setCharacterName(character);
+      console.log(character);
+      const imgUrlObj = imagesArr.find((item => item.fName === character.toLowerCase()))
+      console.log("Image url",imgUrlObj.imgUrl);
+      setCharacterImg(imgUrlObj.imgUrl)
+      openModal();
     }
   }, [answersArr]);
 
@@ -103,8 +111,8 @@ function QuizParent() {
         maxPoints = characterobj[character];
       }
     }
-
-    console.log("Final predicted character", predictedChar);
+    return(predictedChar);
+    
   }
 
   return (
@@ -139,18 +147,18 @@ function QuizParent() {
               })}
             </div>
             <button id="btn" onClick={(event) => nextQuestionHandler(event)}>
-              {answersArr.length >= 9 ? "Predict" : "Next"}
+              {answersArr.length >= 9 ?  "Predict" : "Next"}
             </button>
 
-            <button onClick={openModal}>Open Modal</button>
+            {/* <button onClick={openModal}>Open Modal</button> */}
 
             {isModalOpen && (
               <div className="modal">
                 <div className="modal-content">
 
-                  <p id="title-ans">In the World of Ninjas, You're Most Like: <span className="ch-name">CharacterName</span> </p>
+                  <p id="title-ans">In the World of Ninjas, You're Most Like: <span className="ch-name">{characterName.toUpperCase()}</span> </p>
                   {/* Button to close the modal */}
-                  <img className="img-result" src="https://staticg.sportskeeda.com/editor/2022/05/6ba27-16536769676367.png"/>
+                  <img className="img-result" src={characterImg}/>
                   <button className="close-btn" id="btn" onClick={closeModal}>Close</button>
                 </div>
               </div>

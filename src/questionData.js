@@ -100,4 +100,9 @@ function questionData(){
 
 }
 
-export {questionData}
+
+function characterImages(){
+    return ["imges"]
+}
+
+export {questionData, characterImages}

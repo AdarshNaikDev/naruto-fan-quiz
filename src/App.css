@@ -10,7 +10,7 @@ html {
 
 html,
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   height: 100%;
 }

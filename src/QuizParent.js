@@ -69,6 +69,22 @@ function QuizParent() {
     }
   }
 
+  function previousQnHandler(event){
+    event.preventDefault();
+
+    if(answersArr.length <=9)
+    {
+        const ans = answersArr;
+        ans.pop();
+        setAnsArr(ans)
+        console.log(ans)
+
+        if (questionNo <= 8) {
+            setQuestionNo(questionNo - 1);
+          }
+    }
+  }
+
   useEffect(() => {
     if (questionArray[questionNo] !== undefined) {
       setCurrentQuestion(questionArray[questionNo]);
@@ -146,9 +162,16 @@ function QuizParent() {
                 );
               })}
             </div>
+              <div className="btns-div">
+              {answersArr.length >= 9 ?  "": (<button id="btn" onClick={(event) => previousQnHandler(event)}>
+             Previous
+            </button>)}
+            
             <button id="btn" onClick={(event) => nextQuestionHandler(event)}>
               {answersArr.length >= 9 ?  "Predict" : "Next"}
             </button>
+              </div>
+            
 
             {/* <button onClick={openModal}>Open Modal</button> */}
 

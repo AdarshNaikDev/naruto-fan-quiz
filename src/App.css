@@ -17,7 +17,7 @@ body {
 
 body {
   background: #a8c0ff;
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
   color: #fff;
   user-select: none;
   margin: 0;
@@ -218,7 +218,7 @@ form:invalid #btn {
 
 #game-over {
   background: linear-gradient(rgb(28, 22, 49), rgba(18, 18, 25, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px);
-  font-family: 'Bungee', cursive;
+  
   /* position: absolute; */
   width: 100%;
   height: 100vh;
@@ -294,8 +294,14 @@ h1::before {
   text-align: center;
 }
 
-.over-text-cont h2 {
+/* .over-text-cont h2 {
   font-family: 'Sirin Stencil', cursive;
+} */
+
+h2{
+  font-size: x-large !important;
+      font-weight: bold !important;
+      color: #ffff !important;
 }
 
 .over-text-cont h2::after {
@@ -377,6 +383,7 @@ h1::before {
 
   .over-text-cont h2 {
       margin-bottom: 40px;
+      
   }
 
   .over-text-cont #btn {
@@ -415,15 +422,21 @@ h1::before {
 
 .options{
   cursor: pointer;
+  font-size: medium;
   
 }
 
 .options:hover{
   background-color: #dde0e0;
+  font-weight: bold !important;
+  font-size: large;
+
 }
 
 .options-click{
   background-color: #26efef;
+  font-size: large;
+  font-weight: bold;
   
 }
 
@@ -478,7 +491,7 @@ h1::before {
 }
 
 #title-ans{
-  font-size: medium;
+  font-size: x-large;
 }
 
 /* .img-result{
@@ -503,4 +516,8 @@ h1::before {
 .btns-div{
   display: flex;
   justify-content: space-between;
+}
+
+.question{
+  font-size: x-large;
 }
